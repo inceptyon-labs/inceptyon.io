@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Abstract "I" with circuit-style design -->
+  <rect x="26" y="8" width="12" height="48" rx="2" fill="#64FFDA"/>
+  <circle cx="32" cy="12" r="4" fill="#0A0F1F"/>
+  <circle cx="32" cy="32" r="4" fill="#0A0F1F"/>
+  <circle cx="32" cy="52" r="4" fill="#0A0F1F"/>
+  <path d="M20 16L26 16" stroke="#64FFDA" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 16L44 16" stroke="#64FFDA" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 48L26 48" stroke="#64FFDA" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 48L44 48" stroke="#64FFDA" stroke-width="2" stroke-linecap="round"/>
+</svg>
