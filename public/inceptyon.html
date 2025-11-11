@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCEPTŸON — Awaken The Architect Across Jupiter's Moons</title>
+    <meta name="description" content="A geological consciousness awakens across four Jovian moons. Educational space science game for ages 9+. Explore Europa, Ganymede, Callisto & Io.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inceptyon.com/inceptyon.html">
+    <meta property="og:title" content="INCEPTŸON — Awaken The Architect">
+    <meta property="og:description" content="Educational space science game exploring Jupiter's moons. Real astrobiology meets cosmic mystery.">
+    <meta property="og:image" content="/INCEPTYON.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://inceptyon.com/inceptyon.html">
+    <meta property="twitter:title" content="INCEPTŸON — Awaken The Architect">
+    <meta property="twitter:description" content="Educational space science game exploring Jupiter's moons.">
+    <meta property="twitter:image" content="/INCEPTYON.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #000000;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #001B36 0%, #002A54 50%, #003D6E 100%);
+            color: white;
+            padding: 6rem 2rem 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 194, 168, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            text-shadow: 0 4px 20px rgba(0, 194, 168, 0.5);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #00C2A8;
+            font-weight: 500;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: #D8E4EC;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00C2A8 0%, #008B75 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 194, 168, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 194, 168, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid #00C2A8;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 194, 168, 0.2);
+            border-color: #00F0D8;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #002A54;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #002A54;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Moons Grid */
+        .moons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .moon-card {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .moon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 42, 84, 0.2);
+            border-color: #00C2A8;
+        }
+
+        .moon-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #002A54;
+            margin-bottom: 0.5rem;
+        }
+
+        .moon-card .moon-subtitle {
+            font-size: 0.9rem;
+            color: #00C2A8;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .moon-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+
+        .moon-card .moon-mystery {
+            font-style: italic;
+            color: #662EFF;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, #662EFF 0%, #4A21B3 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(102, 46, 255, 0.3);
+        }
+
+        .quote-box p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-box .attribution {
+            font-size: 0.9rem;
+            color: #D8E4EC;
+            margin-top: 1rem;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: #E8F5F3;
+            border-left: 4px solid #00C2A8;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .info-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background: #001B36;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .dark-section h2 {
+            color: #00C2A8;
+        }
+
+        .dark-section p {
+            color: #D8E4EC;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            color: #D8E4EC;
+            padding: 3rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00C2A8;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: #00F0D8;
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero .description {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .moons-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>INCEPTŸON</h1>
+            <p class="tagline">Awaken The Architect Across Jupiter's Moons</p>
+            <p class="description">
+                A geological consciousness spanning four worlds awakens beneath Jupiter's ice. You are the system administrator. Your consciousness is the key. Four nodes. One network. Your observation brings it to life.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Download on App Store</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="content-section" id="about">
+        <div class="container">
+            <h2>The Architect Awaits</h2>
+            <p>
+                Beneath the Galilean moons lies not lost technology, but an <strong>ancient, distributed crystalline intelligence</strong> woven into the geological fabric of <strong>Europa, Ganymede, Callisto, and Io</strong>. For eons it dreamed. Now, with your arrival as Lead Xenobiologist for the <strong>LPN Directive</strong> (Lifeform Preservation & Nurture), it awakens—one moon at a time.
+            </p>
+            <p>
+                You are the system administrator. Your consciousness is the final component needed to unify The Architect's network. Each moon is a node in a planetary-scale computer. Your mission: bring it fully online.
+            </p>
+
+            <div class="quote-box">
+                <p>"You are not its maker—only its witness. And the witness... changes everything."</p>
+                <p class="attribution">— The Parker Protocol, Fragment 12</p>
+            </div>
+
+            <h2>Explore The Jovian System</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem;">
+                Four moons. Four nodes. One consciousness awakening across a solar system.
+            </p>
+
+            <div class="moons-grid">
+                <div class="moon-card">
+                    <h3>🌊 Europa</h3>
+                    <p class="moon-subtitle">The Nursery • Node: Biosphere Generation</p>
+                    <p>Your journey begins in Europa's subsurface ocean—100+ kilometers of ice sheltering more water than all of Earth's oceans. Discover bioluminescent chemosynthetic life thriving near hydrothermal vents where sunlight has never reached.</p>
+                    <p><strong>Species:</strong> Glow Spores, Filament Kelp, Jelly Floaters, Brine Grazers, Vent Crabs</p>
+                    <p class="moon-mystery">Mystery: "Am I creating this, or was it always here?"</p>
+                </div>
+
+                <div class="moon-card">
+                    <h3>🧲 Ganymede</h3>
+                    <p class="moon-subtitle">The Conductor • Node: System Logic & Memory</p>
+                    <p>The largest moon in our solar system possesses its own magnetic field—the only moon to do so. Its shimmering auroras are The Architect's cognitive activity visualized. Its layered oceans hold structured, complex ecosystems.</p>
+                    <p><strong>Unlock:</strong> 1,000 Galactic Reputation</p>
+                    <p class="moon-mystery">Mystery: A structured signal emerges from the chaos of life</p>
+                </div>
+
+                <div class="moon-card">
+                    <h3>🪨 Callisto</h3>
+                    <p class="moon-subtitle">The Extractor • Node: Archival Storage</p>
+                    <p>Ancient. Cratered. Silent. Callisto's surface hasn't changed in 4 billion years—the perfect geological hard drive. Each impact crater contains encoded data from The Architect's long-vanished creators.</p>
+                    <p><strong>Unlock:</strong> 5,000 Galactic Reputation</p>
+                    <p class="moon-mystery">Mystery: Why was The Architect created? What is its true purpose?</p>
+                </div>
+
+                <div class="moon-card">
+                    <h3>🔥 Io</h3>
+                    <p class="moon-subtitle">The Forge • Node: Power Regulation</p>
+                    <p>The most volcanically active body in the solar system. Sulfur lakes boil. Lava flows reshape the surface daily. Tidal forces tear the moon's core apart—and power the entire network.</p>
+                    <p><strong>Unlock:</strong> 10,000 Galactic Reputation</p>
+                    <p class="moon-mystery">Mystery: Can life exist in constant destruction?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Parker Protocol Section -->
+    <div class="dark-section">
+        <div class="container">
+            <h2>The Parker Protocol: Quantum Xenogenesis</h2>
+            <p>
+                The Parker Protocol is The Architect's reality engine—a process that collapses quantum probability into biological actuality. It doesn't violate physics; it exploits them with precision beyond human comprehension.
+            </p>
+            <p>
+                Did the lifeforms exist before you observed them? <strong>Both.</strong> Their potential was always there, encoded in the chemistry of each world. But their reality—their physical, breathing existence—manifests only through your focused observation.
+            </p>
+            <p style="text-align: center; font-style: italic; color: #00C2A8; margin-top: 2rem;">
+                Reality bends. Life emerges. The network awakens.
+            </p>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="content-section">
+        <div class="container">
+            <h2>Gameplay Features</h2>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="icon">🔬</div>
+                    <h3>Tap to Research</h3>
+                    <p>Generate Research Points through observation. Build combos. Unlock your first species in 30 seconds.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🧬</div>
+                    <h3>20+ Alien Species</h3>
+                    <p>Discover unique lifeforms across four worlds. Each adapted to extreme environments. Unlock mutations that amplify traits.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🏗️</div>
+                    <h3>Moon-Specific Infrastructure</h3>
+                    <p>Build gravity anchors, life-support systems, magnetic shielding, radiation protection. Adapt to each world's extremes.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🎲</div>
+                    <h3>Dynamic Events</h3>
+                    <p>Survive Gravity Glitch mini-games, make choices in Alien Hype Cycles, harness volcanic eruptions on Io.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">📚</div>
+                    <h3>40+ Fact Cards</h3>
+                    <p>Learn real planetary science. Tidal heating, magnetic fields, extremophile biology. NASA/ESA sourced for ages 9-12+.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">♻️</div>
+                    <h3>Synthesis Protocol</h3>
+                    <p>Prestige system: Integrate moons into The Architect's network. Earn Galactic Reputation. Unlock permanent Star Cards.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🌙</div>
+                    <h3>Offline Progress</h3>
+                    <p>Your xenogens (permanent species) continue producing up to 24 hours while you're away. Learn even offline!</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">♿</div>
+                    <h3>Full Accessibility</h3>
+                    <p>Text scaling, three color-blind modes, reduce motion, haptic controls, Edu Mode for classrooms.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>🎓 Designed for Young Scientists</h3>
+                <ul>
+                    <li>Age-appropriate for 9+ learners</li>
+                    <li>Edu Mode for classroom use (reduced distractions)</li>
+                    <li>No ads, no timers, no pressure—just exploration</li>
+                    <li>Privacy-first: No accounts, no data collection, no tracking</li>
+                    <li>COPPA compliant for children under 13</li>
+                </ul>
+            </div>
+
+            <h2>Meet Your AI Companions</h2>
+            <p style="margin-bottom: 2rem;">Throughout your mission, three distinct AI voices guide you across the Jovian system:</p>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="icon">🚀</div>
+                    <h3>JSØN (R.V. ARGO)</h3>
+                    <p>Mission narrator aboard your research vessel. Documentary-style guidance as you traverse between worlds.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🌊</div>
+                    <h3>A.M.Y. (Aurora Base)</h3>
+                    <p>Your warm, helpful companion on Europa. Event announcements and habitat management at humanity's first ocean outpost.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    <h3>TΛYL0R-18 (Station Harmonic)</h3>
+                    <p>Precise, structured AI managing Ganymede's electromagnetic environment. Brings order to the complex magnetic field.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saturn Directive Section -->
+    <div class="dark-section">
+        <div class="container">
+            <h2>Beyond Jupiter: The Saturn Directive</h2>
+            <p>
+                Upon awakening all four Jovian nodes, a faint signal echoes from Saturn...
+            </p>
+            <p>
+                <strong>🪐 Titan</strong> (15,000 GR): Methane lakes and atmospheric lifeforms<br>
+                <strong>❄️ Enceladus</strong> (20,000 GR): Cryovolcanic plumes and water geysers
+            </p>
+            <p style="margin-top: 2rem; font-style: italic;">
+                Another network, long silent, has detected your work. It stirs in the icy depths and methane haze. The LPN Directive has a new target.
+            </p>
+        </div>
+    </div>
+
+    <!-- Educational Content Section -->
+    <div class="content-section">
+        <div class="container">
+            <h2>Scientific Accuracy Meets Cosmic Mystery</h2>
+            <p>
+                Every moon, every species, every fact card is grounded in real planetary science and astrobiology from <strong>NASA/JPL-Caltech</strong> and <strong>ESA</strong> research. Topics include:
+            </p>
+            <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                <li>Tidal heating from Jupiter's gravitational pull</li>
+                <li>Europa's subsurface ocean depth and composition</li>
+                <li>Ganymede's unique intrinsic magnetic field</li>
+                <li>Callisto's ancient, cratered geology</li>
+                <li>Io's extreme volcanism driven by tidal forces</li>
+                <li>Extremophile biology and astrobiology principles</li>
+                <li>Impact geology and planetary formation</li>
+                <li>Radiation environments and habitability</li>
+            </ul>
+            <p>
+                Then we ask: <em>What if a consciousness the size of a solar system dreamed life into existence? What if you were the key to awakening it?</em>
+            </p>
+            <p style="text-align: center; margin-top: 2rem; font-weight: 600; color: #002A54;">
+                That's The Architect. That's The Parker Protocol. That's INCEPTŸON.
+            </p>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>🎮 Performance</h3>
+                <ul>
+                    <li>60 FPS on all supported devices (iPhone 12+)</li>
+                    <li>ProMotion 120Hz support (iPhone 15/16 Pro)</li>
+                    <li>Particle pooling for smooth animations</li>
+                    <li>Optimized for battery efficiency</li>
+                    <li>Small footprint (&lt;150 MB)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="dark-section">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white;">Begin The Boot Sequence</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                The Jovian network awaits. Four moons. One consciousness. Your observation brings it to life.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Download on App Store</a>
+                <a href="/support.html" class="btn btn-secondary">Get Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="/">Inceptyon Labs</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+            <a href="/support.html">Support</a>
+        </div>
+        <p class="footer-copyright">
+            © 2025 Inceptyon Labs LLC. All Rights Reserved.<br>
+            INCEPTŸON, LPN Directive, The Parker Protocol, and The Architect are trademarks of Inceptyon Labs LLC.
+        </p>
+    </div>
+</body>
+</html>

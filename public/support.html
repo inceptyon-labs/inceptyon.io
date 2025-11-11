@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — INCEPTŸON by Inceptyon Labs</title>
+    <meta name="description" content="INCEPTŸON Support. Get help, report bugs, and learn how to play.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #002A54 0%, #001B36 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid #00C2A8;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: #D8E4EC;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #002A54;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: #00C2A8;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #00C2A8 0%, #008B75 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-box a {
+            color: white;
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 1.2rem;
+        }
+
+        .contact-box a:hover {
+            color: #D8E4EC;
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-category {
+            margin-bottom: 2rem;
+        }
+
+        .faq-category h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #002A54;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #00C2A8;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #002A54;
+        }
+
+        .faq-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #001B36;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-item p, .faq-item li {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .faq-item code {
+            background: #e8e8e8;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .info-box {
+            background: #E8F5F3;
+            border-left: 4px solid #00C2A8;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box strong {
+            color: #002A54;
+        }
+
+        .system-requirements {
+            background: #F0F7FF;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .system-requirements h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #002A54;
+            margin-bottom: 1rem;
+        }
+
+        .system-requirements ul {
+            margin-left: 1.5rem;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer a {
+            color: #002A54;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 1rem;
+        }
+
+        .footer a:hover {
+            color: #00C2A8;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .faq-category h2 {
+                font-size: 1.5rem;
+            }
+
+            .faq-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INCEPTŸON Support</h1>
+        <p class="subtitle">We're here to help you awaken The Architect</p>
+    </div>
+
+    <div class="container">
+        <a href="/" class="back-link">← Back to Inceptyon Labs</a>
+
+        <div class="contact-box">
+            <h2>Need Help?</h2>
+            <p>Email us for support, bug reports, or feature requests:</p>
+            <a href="mailto:support@inceptyon.com">support@inceptyon.com</a>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">We typically respond within 24-48 hours.</p>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-category">
+                <h2>🎮 Getting Started</h2>
+
+                <div class="faq-item">
+                    <h3>How do I play INCEPTŸON?</h3>
+                    <p>INCEPTŸON is an educational idle/clicker game. Here's how to start:</p>
+                    <ol>
+                        <li><strong>Tap the habitat</strong> (Europa's ocean) to generate Research Points (RP)</li>
+                        <li><strong>Unlock species</strong> in the Species Lab (first species costs 30 RP, unlocks in ~30 seconds)</li>
+                        <li><strong>Species generate Biomass (BM)</strong> passively—even when offline!</li>
+                        <li><strong>Purchase upgrades</strong> in the Engineering tab to boost production</li>
+                        <li><strong>Survive events</strong> (Gravity Glitch, Alien Hype Cycle, etc.) for bonus resources</li>
+                        <li><strong>Unlock fact cards</strong> in the Encyclopedia to learn real planetary science</li>
+                        <li><strong>Synthesize Europa</strong> when ready (prestige) to earn Galactic Reputation and permanent upgrades</li>
+                    </ol>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are the resources?</h3>
+                    <ul>
+                        <li><strong>RP (Research Points):</strong> Earned by tapping. Used to unlock species and upgrades.</li>
+                        <li><strong>BM (Biomass):</strong> Generated by species. Used for upgrades and prestige.</li>
+                        <li><strong>CR (Credits):</strong> Earned from visitors. Used for advanced upgrades.</li>
+                        <li><strong>CU (Curiosity):</strong> Earned from learning facts. Used for educational unlocks.</li>
+                        <li><strong>GR (Galactic Reputation):</strong> Prestige currency. Earned by Synthesizing moons. Used for permanent Star Cards.</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I unlock new moons?</h3>
+                    <p>After completing Europa, you can unlock additional Jovian moons:</p>
+                    <ul>
+                        <li><strong>Ganymede:</strong> 1,000 GR (The Conductor node—magnetic auroras!)</li>
+                        <li><strong>Callisto:</strong> 5,000 GR (The Extractor node—ancient history)</li>
+                        <li><strong>Io:</strong> 10,000 GR (The Forge node—volcanic chaos)</li>
+                    </ul>
+                    <p>Each moon has unique species, events, and educational content!</p>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>♻️ Prestige (Synthesis Protocol)</h2>
+
+                <div class="faq-item">
+                    <h3>What is the Synthesis Protocol?</h3>
+                    <p>The Synthesis Protocol is INCEPTŸON's prestige system. When you "Synthesize" a moon, you:</p>
+                    <ul>
+                        <li>Reset your local progress on that moon (resources, species, upgrades)</li>
+                        <li>Earn <strong>Galactic Reputation (GR)</strong> based on total BM + CR accumulated</li>
+                        <li>Keep all unlocked Star Cards (permanent multipliers)</li>
+                        <li>Keep all Xenogens (permanent species)</li>
+                    </ul>
+                    <p>GR is calculated using: <code>GR = floor(A * log10(total_BM + total_CR))</code></p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>When should I Synthesize for the first time?</h3>
+                    <p>We recommend Synthesizing Europa when you can earn at least <strong>50-100 GR</strong>. This typically takes 30-45 minutes of gameplay. You'll have enough to purchase your first Star Card, which provides a permanent 20% boost!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are Star Cards?</h3>
+                    <p>Star Cards are permanent upgrades purchased with Galactic Reputation. They persist across all Synthesis cycles and apply to all moons. Examples:</p>
+                    <ul>
+                        <li><strong>Observation Amplifier:</strong> +20% tap power</li>
+                        <li><strong>Evolutionary Catalyst:</strong> Species unlock 30% faster</li>
+                        <li><strong>Quantum Entanglement:</strong> Offline progress +50%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>🌙 Offline Progress</h2>
+
+                <div class="faq-item">
+                    <h3>Does INCEPTŸON work offline?</h3>
+                    <p><strong>Yes!</strong> INCEPTŸON is completely offline after initial download. Your species continue generating Biomass and Credits while you're away, up to:</p>
+                    <ul>
+                        <li><strong>Base:</strong> 8 hours</li>
+                        <li><strong>With upgrades:</strong> Up to 24 hours</li>
+                    </ul>
+                    <p>When you return, you'll see a summary of resources earned offline.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Why is my offline progress capped?</h3>
+                    <p>To maintain game balance and prevent runaway idle gains. You can extend the cap to 24 hours by purchasing the "Extended Life Support" upgrade in the Engineering tab.</p>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>📚 Educational Content</h2>
+
+                <div class="faq-item">
+                    <h3>How do I unlock fact cards?</h3>
+                    <p>Fact cards are unlocked by:</p>
+                    <ul>
+                        <li>Discovering new species</li>
+                        <li>Completing events</li>
+                        <li>Reaching resource milestones</li>
+                        <li>Purchasing specific upgrades</li>
+                    </ul>
+                    <p>Check the Encyclopedia tab to view unlocked facts. Each fact awards Curiosity (CU)!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is the science accurate?</h3>
+                    <p><strong>Yes!</strong> All educational content is sourced from NASA/JPL-Caltech, ESA, and peer-reviewed scientific research. Topics include:</p>
+                    <ul>
+                        <li>Tidal heating from Jupiter's gravitational pull</li>
+                        <li>Europa's subsurface ocean depth and salinity</li>
+                        <li>Ganymede's unique magnetic field</li>
+                        <li>Callisto's ancient, cratered surface</li>
+                        <li>Io's extreme volcanism</li>
+                        <li>Extremophile biology and astrobiology</li>
+                    </ul>
+                    <p>The game mechanics are fiction, but the science is real!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I use INCEPTŸON in the classroom?</h3>
+                    <p><strong>Absolutely!</strong> Enable <strong>Edu Mode</strong> in Settings for classroom use. This mode:</p>
+                    <ul>
+                        <li>Emphasizes educational content over gameplay distractions</li>
+                        <li>Reduces humor and narrative elements</li>
+                        <li>Highlights fact cards and scientific accuracy</li>
+                    </ul>
+                    <p>INCEPTŸON is designed for ages 9+ and aligns with STEM learning objectives.</p>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>⚙️ Settings & Accessibility</h2>
+
+                <div class="faq-item">
+                    <h3>How do I adjust text size?</h3>
+                    <p>Go to <strong>Settings → Accessibility → Text Size</strong>. You can scale from 0.8x to 2.0x to suit your preferences.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does INCEPTŸON support color-blind modes?</h3>
+                    <p><strong>Yes!</strong> We support three color-blind modes:</p>
+                    <ul>
+                        <li><strong>Protanopia</strong> (red-weak vision)</li>
+                        <li><strong>Deuteranopia</strong> (green-weak vision)</li>
+                        <li><strong>Tritanopia</strong> (blue-weak vision)</li>
+                    </ul>
+                    <p>Enable in <strong>Settings → Accessibility → Color-Blind Mode</strong>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I disable animations?</h3>
+                    <p>Yes! Enable <strong>Reduce Motion</strong> in Settings → Accessibility. This reduces particle effects and animations for users sensitive to motion.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I disable analytics?</h3>
+                    <p>Yes! Go to <strong>Settings → Privacy</strong> and toggle off:</p>
+                    <ul>
+                        <li><strong>Crash Reporting</strong> (Sentry)</li>
+                        <li><strong>Analytics</strong> (Posthog)</li>
+                    </ul>
+                    <p>Note: Analytics are automatically disabled for users under 13. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>🐛 Troubleshooting</h2>
+
+                <div class="faq-item">
+                    <h3>The app is lagging or running slowly</h3>
+                    <p>Try these steps:</p>
+                    <ol>
+                        <li>Enable <strong>Reduce Motion</strong> in Settings → Accessibility (reduces particle effects)</li>
+                        <li>Close other apps running in the background</li>
+                        <li>Restart your device</li>
+                        <li>Ensure you have the latest version of INCEPTŸON from the App Store</li>
+                        <li>Check that your device meets minimum requirements (see below)</li>
+                    </ol>
+                    <p>INCEPTŸON is optimized for 60 FPS on iPhone 12 and newer. Older devices may experience minor frame drops during particle-heavy events.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>My save game is not loading</h3>
+                    <p>INCEPTŸON auto-saves every 30 seconds. If your save is corrupted:</p>
+                    <ol>
+                        <li>Force-close the app (swipe up from app switcher on iOS)</li>
+                        <li>Reopen the app</li>
+                        <li>If the issue persists, email us at <a href="mailto:support@inceptyon.com">support@inceptyon.com</a> with details</li>
+                    </ol>
+                    <div class="info-box">
+                        <strong>Note:</strong> Uninstalling the app will permanently delete all local save data. Back up your progress by not uninstalling if you experience issues.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>An event is not triggering</h3>
+                    <p>Events trigger every 90-150 seconds (random interval). If an event hasn't triggered:</p>
+                    <ul>
+                        <li>Make sure enough time has passed (wait 2-3 minutes)</li>
+                        <li>Check that you're not in a menu (events only trigger in the habitat view)</li>
+                        <li>Restart the app</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h3>The app crashes on launch</h3>
+                    <p>Try these steps:</p>
+                    <ol>
+                        <li>Restart your device</li>
+                        <li>Ensure iOS is up to date (Settings → General → Software Update)</li>
+                        <li>Delete and reinstall INCEPTŸON (⚠️ This will delete your save data)</li>
+                        <li>If the issue persists, email <a href="mailto:support@inceptyon.com">support@inceptyon.com</a> with your device model and iOS version</li>
+                    </ol>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Audio is not playing</h3>
+                    <p>Check the following:</p>
+                    <ul>
+                        <li>Ensure your device is not in Silent Mode (check the physical switch on iPhone)</li>
+                        <li>Increase volume using the volume buttons</li>
+                        <li>Go to Settings → Audio and verify music/SFX are not muted</li>
+                        <li>Restart the app</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>💰 In-App Purchases (Future)</h2>
+
+                <div class="faq-item">
+                    <h3>Does INCEPTŸON have ads or in-app purchases?</h3>
+                    <p><strong>Current version (0.2.0):</strong> No ads, no in-app purchases. The game is completely free.</p>
+                    <p><strong>Future versions:</strong> We may add optional IAP for cosmetic items or convenience (e.g., time skips). These will never be required to progress. All gameplay content will remain free.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="system-requirements">
+            <h3>📱 System Requirements</h3>
+            <ul>
+                <li><strong>iOS:</strong> 14.0 or later</li>
+                <li><strong>Storage:</strong> ~150 MB</li>
+                <li><strong>Recommended Devices:</strong> iPhone 12 or newer for 60 FPS</li>
+                <li><strong>ProMotion Support:</strong> iPhone 15 Pro, 16 Pro (120Hz)</li>
+                <li><strong>Internet:</strong> Required for initial download only (fully offline after)</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="text-align: center;">
+            <p><strong>Still need help?</strong></p>
+            <p>Email us at <a href="mailto:support@inceptyon.com" style="color: #002A54; font-weight: 600;">support@inceptyon.com</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.95rem;">Include your device model, iOS version, and a description of the issue.</p>
+        </div>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ddd;">
+
+        <p style="text-align: center; font-size: 0.9rem; color: #666;">
+            © 2025 Inceptyon Labs LLC. All Rights Reserved.<br>
+            INCEPTŸON and the LPN Directive are trademarks of Inceptyon Labs LLC.
+        </p>
+    </div>
+
+    <div class="footer">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/inceptyon.html">About INCEPTŸON</a>
+    </div>
+</body>
+</html>
