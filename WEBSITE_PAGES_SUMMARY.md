@@ -143,9 +143,9 @@ When filling out App Store Connect metadata, use these URLs:
 Before deploying, search and replace these placeholders:
 
 ### In All Files:
-- `[Your Address]` → Your actual business address
+- `Tampa, Florida` → Your actual business address
 - `[Your State/Country]` → e.g., "California, United States"
-- `[Your County/State]` → e.g., "San Francisco County, California"
+- `Hillsborough County, Florida` → e.g., "San Francisco County, California"
 
 ### Contact Emails (Already Set):
 - ✅ `support@inceptyon.com` — General support
@@ -248,7 +248,7 @@ All pages link to:
 ## Next Steps
 
 1. **Review all HTML files** in `/public/` directory
-2. **Update placeholder values** ([Your Address], etc.)
+2. **Update placeholder values** (Tampa, Florida, etc.)
 3. **Set up email addresses** (support@, privacy@, legal@)
 4. **Test locally** (open HTML files in browser)
 5. **Deploy to production** (push to Git, deploy to hosting)

@@ -66,9 +66,9 @@ INCEPTŸON landing page:
 ## Before Deployment
 
 **Update these placeholders in ALL legal pages:**
-- `[Your Address]` → Your business address
+- `Tampa, Florida` → Your business address
 - `[Your State/Country]` → e.g., "California, United States"
-- `[Your County/State]` → e.g., "San Francisco County, California"
+- `Hillsborough County, Florida` → e.g., "San Francisco County, California"
 
 **Set up these email addresses:**
 - support@inceptyon.com (general support)
