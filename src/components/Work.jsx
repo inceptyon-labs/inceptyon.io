@@ -67,9 +67,10 @@ const Work = () => {
     {
       title: 'INCEPTŸON',
       tagline: 'Sci-fi educational simulation game exploring alien ecosystems',
-      status: 'In Development',
+      status: 'Available',
       image: '/INCEPTYON.png',
-      fillCard: true
+      fillCard: true,
+      link: 'https://apps.apple.com/us/app/incept%C3%BFon/id6753733758'
     },
     {
       title: 'Holocron',
