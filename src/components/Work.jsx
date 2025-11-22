@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const ProjectCard = ({ title, tagline, status, delay, image, fillCard }) => {
+const ProjectCard = ({ title, tagline, status, delay, image, fillCard, link }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -12,6 +12,12 @@ const ProjectCard = ({ title, tagline, status, delay, image, fillCard }) => {
     'In Development': 'bg-yellow-400/20 text-yellow-400 border-yellow-400/30'
   }
 
+  const handleClick = () => {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
     <motion.div
       ref={ref}
@@ -19,6 +25,7 @@ const ProjectCard = ({ title, tagline, status, delay, image, fillCard }) => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -10 }}
+      onClick={handleClick}
       className="group bg-navy-800/50 rounded-xl overflow-hidden border border-cyan-400/10 hover:border-cyan-400/30 transition-all cursor-pointer"
     >
       {/* Image Placeholder */}
@@ -84,9 +91,11 @@ const Work = () => {
       image: '/gchl.png'
     },
     {
-      title: 'Inceptyon Voice',
-      tagline: 'Experimental conversational AI agent',
-      status: 'Coming Soon'
+      title: 'Alyqon',
+      tagline: 'Visual explorer for aliquot sums and iterative sequences',
+      status: 'Available',
+      image: '/alyqon-logo.png',
+      link: 'https://alyqon.inceptyon.io/'
     },
     {
       title: 'Gugo',
@@ -123,6 +132,7 @@ const Work = () => {
               status={project.status}
               image={project.image}
               fillCard={project.fillCard}
+              link={project.link}
               delay={0.1 * index}
             />
           ))}
