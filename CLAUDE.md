@@ -4,30 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This repository contains **Inceptyon Labs LLC** projects. The main project is `inceptyon-web/`, a modern single-page marketing website built with React 18, Vite 5.4, Tailwind CSS 3.4, and Framer Motion 11.15.
+This repository contains the **Inceptyon Labs LLC** marketing website — a modern, responsive single-page application built with React 19, Vite 7, Tailwind CSS 3, and Framer Motion 12. Currently deployed to Cloudflare Pages at https://inceptyon.io.
 
 ## Development Commands
 
 ### Local Development
 
 ```bash
-cd inceptyon-web
 npm install              # Install dependencies
-npm run dev             # Start dev server at http://localhost:3000
+npm run dev             # Start dev server at http://localhost:5173
 npm run build           # Build for production (outputs to dist/)
 npm run preview         # Preview production build
 ```
 
-### Docker Commands
-
-```bash
-cd inceptyon-web
-npm run docker:build    # Build Docker image
-npm run docker:run      # Run container on port 8080
-docker-compose up -d    # Start with compose (recommended for Unraid)
-docker-compose logs -f  # View logs
-docker-compose down     # Stop container
-```
+**Note**: Docker commands (`npm run docker:build`, `npm run docker:run`) are available but no longer actively maintained. Use Cloudflare Pages for deployment.
 
 ## Architecture
 
@@ -81,26 +71,24 @@ Status badges auto-style based on status value (see `statusColors` in `Work.jsx:
 ### Build Configuration
 
 **Vite** (`vite.config.js`):
-- Dev server runs on port 3000 with auto-open
+- Dev server runs on port 5173 with auto-open
 - Uses `@vitejs/plugin-react` for Fast Refresh
 - Production builds to `dist/` with automatic optimization
+- Configured for SPA with proper asset handling
 
-**Docker** (multi-stage build):
-1. Node build stage: `npm install` + `npm run build`
-2. Nginx production stage: serves static files from `/usr/share/nginx/html`
-3. Custom `nginx.conf` with gzip, caching, SPA fallback routing, security headers
+## Deployment
 
-## Deployment Targets
+### Primary: Cloudflare Pages (Current)
+- **Live site**: https://inceptyon.io
+- **Build command**: `npm run build`
+- **Output directory**: `dist/`
+- **Auto-deployed** on push to main branch
+- Global CDN coverage with automatic HTTPS
 
-### Primary: Unraid Docker
-- Default port mapping: `8080:80`
-- Health check endpoint: `/health`
-- Reverse proxy ready (Nginx Proxy Manager/Traefik labels available in DOCKER-DEPLOYMENT.md)
-- Expected resources: 20-50 MB RAM, <1% CPU idle
-
-### Alternative: Cloud Platforms
-- **Vercel/Netlify**: Build command `npm run build`, output dir `dist/`
-- **Cloudflare Pages**: Same build settings
+### Alternative: Other Cloud Platforms
+- **Vercel**: Build command `npm run build`, output dir `dist/`
+- **Netlify**: Build command `npm run build`, output dir `dist/`
+- **Docker** (legacy): `npm run docker:build` && `npm run docker:run` (unmaintained)
 
 ## Important Notes
 
@@ -132,11 +120,12 @@ All animations use Framer Motion. Key props:
 - `transition` - Duration, delay, easing
 - `whileHover` - Interactive state
 
-## Docker Deployment Details
+## Package Versions
 
-See **DOCKER-DEPLOYMENT.md** for comprehensive Unraid setup including:
-- 3 deployment methods (Compose Manager, Manual Template, Custom XML)
-- Reverse proxy configuration
-- Health checks and monitoring
-- Troubleshooting guide
-- Security best practices
+All dependencies are kept up-to-date:
+- React 19.2.3 (latest)
+- Vite 7.3.1 (latest)
+- Tailwind CSS 3.4.19 (latest stable)
+- Framer Motion 12.25.0 (latest)
+
+Run `npm outdated` to check for updates.
