@@ -8,8 +8,6 @@ This repository contains the **Inceptyon Labs LLC** marketing website — a mode
 
 ## Development Commands
 
-### Local Development
-
 ```bash
 npm install              # Install dependencies
 npm run dev             # Start dev server at http://localhost:5173
@@ -17,7 +15,7 @@ npm run build           # Build for production (outputs to dist/)
 npm run preview         # Preview production build
 ```
 
-**Note**: Docker commands (`npm run docker:build`, `npm run docker:run`) are available but no longer actively maintained. Use Cloudflare Pages for deployment.
+**Deployment**: Push to main branch → auto-deployed to Cloudflare Pages
 
 ## Architecture
 
@@ -78,17 +76,18 @@ Status badges auto-style based on status value (see `statusColors` in `Work.jsx:
 
 ## Deployment
 
-### Primary: Cloudflare Pages (Current)
+### Cloudflare Pages (Current)
 - **Live site**: https://inceptyon.io
 - **Build command**: `npm run build`
 - **Output directory**: `dist/`
 - **Auto-deployed** on push to main branch
 - Global CDN coverage with automatic HTTPS
 
-### Alternative: Other Cloud Platforms
-- **Vercel**: Build command `npm run build`, output dir `dist/`
-- **Netlify**: Build command `npm run build`, output dir `dist/`
-- **Docker** (legacy): `npm run docker:build` && `npm run docker:run` (unmaintained)
+To deploy a fork:
+1. Push to GitHub
+2. Connect repo to Cloudflare Pages
+3. Set build command: `npm run build`
+4. Set output directory: `dist/`
 
 ## Important Notes
 
