@@ -4,10 +4,10 @@ A modern, responsive single-page website for Inceptyon Labs LLC — a creative t
 
 ## Tech Stack
 
-- **React 18** - UI library (latest stable)
-- **Vite 5.4** - Fast build tool and dev server (latest from Context7)
-- **Tailwind CSS 3.4** - Utility-first CSS framework (latest stable)
-- **Framer Motion 11.15** - Animation library (latest)
+- **React 19** - UI library (latest)
+- **Vite 7** - Fast build tool and dev server (latest)
+- **Tailwind CSS 3** - Utility-first CSS framework (latest stable)
+- **Framer Motion 12** - Animation library (latest)
 - **Space Grotesk & Inter** - Typography
 
 ## Quick Start
@@ -156,19 +156,19 @@ npm i -g netlify-cli
 netlify deploy --prod
 ```
 
-## Package Versions (Latest from Context7)
+## Package Versions
 
-All packages are using the **latest stable versions** as verified by Context7 MCP:
+All packages use the **latest stable versions**:
 
 ```json
 {
-  "react": "^18.3.1",
-  "react-dom": "^18.3.1",
-  "framer-motion": "^11.15.0",
-  "vite": "^5.4.11",
+  "react": "^19.2.3",
+  "react-dom": "^19.2.3",
+  "framer-motion": "^12.25.0",
+  "vite": "^7.3.1",
   "tailwindcss": "^3.4.17",
   "postcss": "^8.4.49",
-  "autoprefixer": "^10.4.20"
+  "autoprefixer": "^10.4.23"
 }
 ```
 
