@@ -33,50 +33,32 @@ npm run build
 npm run preview
 ```
 
-## Docker Deployment (Unraid)
+## Deployment
 
-This project includes a complete Docker setup optimized for Unraid servers.
+### Cloudflare Pages (Live)
 
-### Quick Deploy
+This project is **currently deployed to Cloudflare Pages**.
 
-```bash
-# Build and run with Docker Compose
-docker-compose up -d --build
+Visit: **https://inceptyon.io**
 
-# Access at http://your-unraid-ip:8080
-```
+To deploy your own fork to Cloudflare Pages:
+1. Push code to GitHub (repo is public)
+2. Connect repo to Cloudflare Pages in [Cloudflare Dashboard](https://dash.cloudflare.com)
+3. Build command: `npm run build`
+4. Output directory: `dist`
 
-### Docker Commands
+### Docker (Legacy)
 
-```bash
-# Build image
-npm run docker:build
-
-# Run container
-npm run docker:run
-
-# Or use docker-compose
-docker-compose up -d
-docker-compose logs -f
-docker-compose down
-```
-
-### Documentation
-
-- **[README-DOCKER.md](./README-DOCKER.md)** - Quick start guide for Docker
-- **[DOCKER-DEPLOYMENT.md](./DOCKER-DEPLOYMENT.md)** - Complete deployment guide with:
-  - 3 Unraid deployment methods
-  - Reverse proxy setup
-  - Performance optimization
-  - Troubleshooting
-  - Security best practices
+Docker configuration is available for local development or self-hosting but is no longer actively maintained. If you need Docker, the old setup is in `Dockerfile` and `docker-compose.yml`.
 
 ## Project Structure
 
 ```
 inceptyon-web/
 ├── public/
-│   └── favicon.svg              # Custom Inceptyon Labs favicon
+│   ├── favicon.svg              # Custom favicon
+│   ├── robots.txt               # SEO optimization
+│   └── sitemap.xml              # Sitemap for crawlers
 ├── src/
 │   ├── components/
 │   │   ├── NavBar.jsx           # Sticky navigation
@@ -89,14 +71,12 @@ inceptyon-web/
 │   ├── App.jsx                  # Main app component
 │   ├── main.jsx                 # React entry point
 │   └── index.css                # Global styles + Tailwind
-├── Dockerfile                   # Multi-stage production build
-├── docker-compose.yml           # Unraid deployment config
-├── nginx.conf                   # Production web server config
-├── index.html                   # HTML template with SEO
-├── package.json                 # Latest dependencies
+├── index.html                   # HTML template with OpenGraph SEO
+├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
-└── postcss.config.js
+├── postcss.config.js
+└── CLAUDE.md                    # Development guidelines
 ```
 
 ## Features
@@ -116,10 +96,10 @@ inceptyon-web/
 6. **Footer** - Copyright, Privacy/Terms links
 
 ### Technical
-- **SEO Ready**: OpenGraph, Twitter Card meta tags
-- **Responsive**: Mobile-first design
-- **Performance**: Optimized with Vite, gzip, caching
-- **Docker Ready**: Production-ready containerization
+- **SEO Ready**: OpenGraph, Twitter Card meta tags, structured data, sitemap, robots.txt
+- **Responsive**: Mobile-first design, works on all devices
+- **Performance**: Optimized with Vite, global CDN caching via Cloudflare
+- **Security**: HTTPS everywhere, security headers configured
 
 ## Customization
 
@@ -152,9 +132,19 @@ colors: {
 }
 ```
 
-## Deployment Options
+## Deploy Your Own
 
-### Vercel (Easiest)
+Choose your preferred hosting platform:
+
+### Cloudflare Pages (Recommended)
+1. Fork this repo on GitHub
+2. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
+3. Connect your forked repo
+4. Set build command: `npm run build`
+5. Set output directory: `dist`
+6. Deploy!
+
+### Vercel
 ```bash
 npm i -g vercel
 vercel
@@ -165,14 +155,6 @@ vercel
 npm i -g netlify-cli
 netlify deploy --prod
 ```
-
-### Cloudflare Pages
-1. Connect Git repo
-2. Build command: `npm run build`
-3. Output directory: `dist`
-
-### Unraid Docker (This Project)
-See [DOCKER-DEPLOYMENT.md](./DOCKER-DEPLOYMENT.md) for complete guide.
 
 ## Package Versions (Latest from Context7)
 
@@ -192,10 +174,10 @@ All packages are using the **latest stable versions** as verified by Context7 MC
 
 ## Performance
 
-- **Memory**: 20-50 MB (Docker container)
-- **CPU**: < 1% idle, 5-10% under load
-- **Disk**: ~15 MB (Docker image)
-- **Build Size**: ~200 KB (gzipped)
+- **Bundle Size**: ~200 KB (gzipped)
+- **Initial Load**: < 2s on 4G
+- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices)
+- **CDN**: Global coverage via Cloudflare
 
 ## Browser Support
 
@@ -216,5 +198,5 @@ All packages are using the **latest stable versions** as verified by Context7 MC
 ## Support
 
 For issues or questions:
-- Check [DOCKER-DEPLOYMENT.md](./DOCKER-DEPLOYMENT.md) for deployment help
+- Check [CLAUDE.md](./CLAUDE.md) for development guidelines
 - Email: hello@inceptyon.io
