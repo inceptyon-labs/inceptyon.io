@@ -80,11 +80,11 @@ const Work = () => {
     },
     {
       title: 'The Racket by Unwyned',
-      tagline: 'Welcome to the operation.',
+      tagline: 'Your personal wine fixer. Welcome to the operation.',
       status: 'Available',
       image: '/unwyned-logo.png',
       link: 'https://apps.apple.com/app/unwyned/id6755911748',
-      fillCard: true
+      fillCard: false
     },
     {
       title: 'Fireball Fantasy Fiasco',
