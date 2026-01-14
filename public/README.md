@@ -60,7 +60,7 @@ INCEPTŸON landing page:
 - `gchl.png` — GCHL project
 - `gugo-duck.png` — Gugo Duck project
 - `tesseract.png` — Tesseract project
-- `whiskey.png` — Whiskey project
+- `unwyned-logo.png` — The Racket by Unwyned project
 - `studio.png` — Studio image
 
 ## Before Deployment

@@ -79,10 +79,11 @@ const Work = () => {
       image: '/tesseract.png'
     },
     {
-      title: 'Whiskey Ledger',
-      tagline: 'Lifestyle app for whiskey collectors and enthusiasts',
-      status: 'Coming Soon',
-      image: '/whiskey.png',
+      title: 'The Racket by Unwyned',
+      tagline: 'Welcome to the operation.',
+      status: 'Available',
+      image: '/unwyned-logo.png',
+      link: 'https://apps.apple.com/app/unwyned/id6755911748',
       fillCard: true
     },
     {
