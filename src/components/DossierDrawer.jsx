@@ -10,6 +10,7 @@ import {
 } from '../lib/studio'
 import CoordinateBreadcrumb from './CoordinateBreadcrumb'
 import DossierSchematic from './DossierSchematic'
+import { PROJECT_TOTAL } from '../lib/projects'
 
 const STATUS_COLOR = {
   DEPLOYED: 'text-phosphor border-phosphor',
@@ -100,7 +101,7 @@ export default function DossierDrawer({ project, open, onClose }) {
                 {/* L2 — DOSSIER frame */}
                 <section className="frame-l2 p-6 md:p-8">
                   <div className="mono-caps tabular flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-graphite pb-4 text-[10px] text-slate">
-                    <span>DOSSIER {project.code} / 12</span>
+                    <span>DOSSIER {project.code} / {String(PROJECT_TOTAL).padStart(2, '0')}</span>
                     <span aria-hidden="true" className="text-graphite">/</span>
                     <span>DOMAIN: {project.domain}</span>
                     <span aria-hidden="true" className="text-graphite">/</span>

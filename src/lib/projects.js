@@ -269,6 +269,29 @@ export const PROJECTS = [
     ],
     primary_link: 'https://github.com/inceptyon-labs/TARS',
   },
+  {
+    code: '14',
+    slug: 'foodymerge',
+    title: 'FoodieMerge',
+    subtitle: 'PLUM HOLLOW',
+    domain: 'MERGE-2 GAMING',
+    status: 'DEPLOYED',
+    classification: 'A cozy merge-2 mobile game.',
+    signal: 'Tap, merge, rebuild the town.',
+    description:
+      'A cozy merge-2 game where players rebuild Plum Hollow by tapping generators, merging board items, fulfilling orders, and unlocking a small farm town. iOS and Android.',
+    instances: ['iOS', 'ANDROID'],
+    stack: ['FLUTTER'],
+    established_on: D(2026, 5, 16),
+    latest_release: D(2026, 6, 6),
+    logo: '/project-foodymerge.png',
+    links: [
+      { label: 'WEBSITE', href: 'https://foodiemerge.com' },
+      { label: 'APP STORE', href: 'https://apps.apple.com/app/foodiemerge/id6772793633' },
+      { label: 'GOOGLE PLAY', href: 'https://play.google.com/store/apps/details?id=com.inceptyonlabs.foodymerge' },
+    ],
+    primary_link: 'https://foodiemerge.com',
+  },
 ]
 
 export const PROJECT_TOTAL = PROJECTS.length

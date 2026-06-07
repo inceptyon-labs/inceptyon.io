@@ -1,0 +1,159 @@
+<svg width="1800" height="1400" viewBox="0 0 1800 1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text {
+        font-family: Geist, Inter, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      .title {
+        font-size: 58px;
+        font-weight: 900;
+        fill: #eaf7f8;
+      }
+
+      .meta {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 15px;
+        fill: #7f9098;
+      }
+
+      .label {
+        font-size: 17px;
+        font-weight: 800;
+        fill: #36d4df;
+        letter-spacing: 3px;
+      }
+
+      .word {
+        font-size: 76px;
+        font-weight: 500;
+        fill: #eaf7f8;
+        letter-spacing: 8px;
+      }
+
+      .labs {
+        font-size: 28px;
+        font-weight: 500;
+        fill: #a8bbc1;
+        letter-spacing: 13px;
+      }
+
+      .note {
+        font-size: 24px;
+        font-weight: 600;
+        fill: #eaf7f8;
+      }
+
+      .small {
+        font-size: 17px;
+        font-weight: 500;
+        fill: #8fa0a7;
+      }
+    </style>
+
+    <linearGradient id="cyan-stroke" x1="36" y1="20" x2="184" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#78f4ff"/>
+      <stop offset="0.52" stop-color="#31d4df"/>
+      <stop offset="1" stop-color="#16808c"/>
+    </linearGradient>
+
+    <filter id="quiet-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.88 0 0 0 0 0.95 0 0 0 0.42 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <symbol id="sigil" viewBox="0 0 220 220">
+      <path d="M110 22 L186 66 V154 L110 198 L34 154 V66 Z" fill="none" stroke="url(#cyan-stroke)" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M110 50 L82 70 H104 V94 L76 114 H100 V156 L122 168 V128 L150 108 H126 V84 L154 64 H132 Z"
+        fill="none" stroke="#35d7e4" stroke-width="12" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M110 50 L82 70 H104 V94 L76 114 H100 V156 L122 168 V128 L150 108 H126 V84 L154 64 H132 Z"
+        fill="#35d7e4" opacity="0.18"/>
+      <rect x="101" y="36" width="18" height="18" rx="3" fill="#78f4ff"/>
+    </symbol>
+
+    <symbol id="sigil-open" viewBox="0 0 220 220">
+      <path d="M110 42 L76 66 H102 V92 L68 116 H98 V164 L122 176 V128 L154 104 H128 V78 L164 54 H134 Z"
+        fill="none" stroke="url(#cyan-stroke)" stroke-width="16" stroke-linejoin="miter" stroke-linecap="square"/>
+      <rect x="100" y="20" width="20" height="20" rx="4" fill="#78f4ff"/>
+    </symbol>
+
+    <symbol id="wordmark-y" viewBox="0 0 78 96">
+      <path d="M8 10 L39 45 L70 10" fill="none" stroke="#eaf7f8" stroke-width="10" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M39 45 V86" fill="none" stroke="#eaf7f8" stroke-width="10" stroke-linecap="square"/>
+      <path d="M50 45 H70" fill="none" stroke="#36d4df" stroke-width="6" stroke-linecap="square"/>
+    </symbol>
+
+    <symbol id="compact-il" viewBox="0 0 220 220">
+      <path d="M72 46 V174" fill="none" stroke="#eaf7f8" stroke-width="18" stroke-linecap="square"/>
+      <path d="M118 46 V154 H164" fill="none" stroke="#eaf7f8" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M92 76 H124 L92 108 H124 L92 140 H124" fill="none" stroke="#36d4df" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M46 38 H174 M46 182 H174" fill="none" stroke="#264b52" stroke-width="6" stroke-linecap="square"/>
+    </symbol>
+  </defs>
+
+  <rect width="1800" height="1400" fill="#0b1116"/>
+  <path d="M0 156 H1800 M0 468 H1800 M0 780 H1800 M0 1092 H1800" stroke="#18313a" stroke-width="1"/>
+
+  <text x="80" y="84" class="title">INCEPTYON LABS</text>
+  <text x="82" y="122" class="meta">ROUND 2 / EVOLVE THE CURRENT HEX + SIGIL / FEWER PARTS / MORE PROJECT-FAMILY DNA</text>
+
+  <g transform="translate(82 210)">
+    <text x="0" y="0" class="label">A / REFINED CURRENT</text>
+    <g transform="translate(0 22)" filter="url(#quiet-glow)">
+      <use href="#sigil" width="230" height="230"/>
+    </g>
+    <g transform="translate(310 70)">
+      <text x="0" y="65" class="word">INCEPT</text>
+      <use href="#wordmark-y" x="345" y="0" width="62" height="86"/>
+      <text x="414" y="65" class="word">ON</text>
+      <text x="3" y="118" class="labs">LABS</text>
+    </g>
+    <text x="1190" y="88" class="note">Closest to the brand you already have.</text>
+    <text x="1190" y="124" class="small">Cleaner version of the current mark.</text>
+  </g>
+
+  <g transform="translate(82 522)">
+    <text x="0" y="0" class="label">B / SIGIL WORDMARK</text>
+    <g transform="translate(10 42)" filter="url(#quiet-glow)">
+      <use href="#sigil-open" width="200" height="200"/>
+    </g>
+    <g transform="translate(310 70)">
+      <text x="0" y="65" class="word">INCEPTYON</text>
+      <text x="3" y="118" class="labs">LABS</text>
+    </g>
+    <text x="1190" y="88" class="note">Less badge, more publisher imprint.</text>
+    <text x="1190" y="124" class="small">Drops the frame, keeps the sigil energy.</text>
+  </g>
+
+  <g transform="translate(82 834)">
+    <text x="0" y="0" class="label">C / MONOGRAM SYSTEM</text>
+    <g transform="translate(4 42)">
+      <use href="#compact-il" width="210" height="210"/>
+    </g>
+    <g transform="translate(310 70)">
+      <text x="0" y="65" class="word">INCEPTYON</text>
+      <text x="3" y="118" class="labs">LABS</text>
+    </g>
+    <text x="1190" y="88" class="note">Professional, but still technical.</text>
+    <text x="1190" y="124" class="small">More serious company mark. Less magical, less game-logo.</text>
+  </g>
+
+  <g transform="translate(82 1146)">
+    <text x="0" y="0" class="label">D / SPONSOR AVATAR TEST</text>
+    <circle cx="114" cy="132" r="108" fill="#0b1116" stroke="#203842" stroke-width="4"/>
+    <g transform="translate(4 22)" filter="url(#quiet-glow)">
+      <use href="#sigil" width="220" height="220"/>
+    </g>
+    <g transform="translate(310 72)">
+      <text x="0" y="65" class="word">INCEPTYON</text>
+      <text x="3" y="118" class="labs">LABS</text>
+    </g>
+    <text x="1190" y="88" class="note">This is the GitHub Sponsors constraint.</text>
+    <text x="1190" y="124" class="small">If the avatar works in the circle, the rest of the system is easy.</text>
+  </g>
+</svg>

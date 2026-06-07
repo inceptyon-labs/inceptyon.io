@@ -399,6 +399,62 @@ const GulfCoastHackers = () => (
   </Frame>
 )
 
+const FoodieMerge = () => (
+  <Frame label="FoodieMerge — merge-2 board">
+    {/* 5x4 board grid */}
+    {(() => {
+      const cols = 5
+      const rows = 4
+      const cellW = 36
+      const cellH = 32
+      const x0 = 70
+      const y0 = 38
+      return (
+        <>
+          <rect x={x0} y={y0} width={cols * cellW} height={rows * cellH} fill="none" stroke={STROKE} strokeWidth="1" />
+          {Array.from({ length: cols - 1 }).map((_, c) => (
+            <line key={`v${c}`} x1={x0 + (c + 1) * cellW} y1={y0} x2={x0 + (c + 1) * cellW} y2={y0 + rows * cellH} stroke={STROKE} strokeWidth="0.6" />
+          ))}
+          {Array.from({ length: rows - 1 }).map((_, r) => (
+            <line key={`h${r}`} x1={x0} y1={y0 + (r + 1) * cellH} x2={x0 + cols * cellW} y2={y0 + (r + 1) * cellH} stroke={STROKE} strokeWidth="0.6" />
+          ))}
+          {/* board tokens — circles of varied tiers */}
+          {[
+            [0, 0, 4], [2, 0, 6], [4, 1, 5],
+            [1, 2, 7], [3, 3, 5], [0, 3, 6],
+          ].map(([c, r, rad], i) => (
+            <circle
+              key={i}
+              cx={x0 + c * cellW + cellW / 2}
+              cy={y0 + r * cellH + cellH / 2}
+              r={rad}
+              fill="none"
+              stroke={STROKE}
+              strokeWidth="0.8"
+            />
+          ))}
+          {/* the merge — two equal tokens combining into one accent token */}
+          {(() => {
+            const ax = x0 + 1 * cellW + cellW / 2
+            const ay = y0 + 1 * cellH + cellH / 2
+            const bx = x0 + 2 * cellW + cellW / 2
+            const by = ay
+            return (
+              <>
+                <circle cx={ax} cy={ay} r="6" fill="none" stroke={ACCENT} strokeWidth="1" />
+                <circle cx={bx} cy={by} r="6" fill="none" stroke={ACCENT} strokeWidth="1" />
+                <line x1={ax + 7} y1={ay} x2={bx - 7} y2={by} stroke={ACCENT} strokeWidth="0.7" strokeDasharray="2 2" />
+                <line x1={(ax + bx) / 2} y1={ay - 12} x2={(ax + bx) / 2} y2={y0 - 8} stroke={ACCENT} strokeWidth="0.7" strokeDasharray="2 2" />
+                <circle cx={(ax + bx) / 2} cy={y0 - 12} r="4" fill={ACCENT} />
+              </>
+            )
+          })()}
+        </>
+      )
+    })()}
+  </Frame>
+)
+
 const SCHEMATICS = {
   unwyned: Unwyned,
   sequentyol: Sequentyol,
@@ -413,6 +469,7 @@ const SCHEMATICS = {
   tenet: Tenet,
   pasiv: PASIV,
   tars: TARS,
+  foodymerge: FoodieMerge,
 }
 
 export default function DossierSchematic({ slug }) {

@@ -1,0 +1,47 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text {
+        font-family: Geist, Inter, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+    </style>
+    <linearGradient id="cyan-stroke" x1="36" y1="20" x2="184" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#78f4ff"/>
+      <stop offset="0.52" stop-color="#31d4df"/>
+      <stop offset="1" stop-color="#16808c"/>
+    </linearGradient>
+    <filter id="quiet-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.88 0 0 0 0 0.95 0 0 0 0.4 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <symbol id="sigil" viewBox="0 0 220 220">
+      <path d="M110 22 L186 66 V154 L110 198 L34 154 V66 Z" fill="none" stroke="url(#cyan-stroke)" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M110 50 L82 70 H104 V94 L76 114 H100 V156 L122 168 V128 L150 108 H126 V84 L154 64 H132 Z"
+        fill="none" stroke="#35d7e4" stroke-width="12" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M110 50 L82 70 H104 V94 L76 114 H100 V156 L122 168 V128 L150 108 H126 V84 L154 64 H132 Z"
+        fill="#35d7e4" opacity="0.18"/>
+      <rect x="101" y="36" width="18" height="18" rx="3" fill="#78f4ff"/>
+    </symbol>
+    <symbol id="wordmark-y" viewBox="0 0 78 96">
+      <path d="M8 10 L39 45 L70 10" fill="none" stroke="#eaf7f8" stroke-width="10" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M39 45 V86" fill="none" stroke="#eaf7f8" stroke-width="10" stroke-linecap="square"/>
+      <path d="M50 45 H70" fill="none" stroke="#36d4df" stroke-width="6" stroke-linecap="square"/>
+    </symbol>
+  </defs>
+
+  <rect width="1200" height="420" fill="#0b1116"/>
+  <g transform="translate(84 88)" filter="url(#quiet-glow)">
+    <use href="#sigil" width="244" height="244"/>
+  </g>
+  <g transform="translate(390 132)">
+    <text x="0" y="84" fill="#eaf7f8" font-size="92" font-weight="500" letter-spacing="9">INCEPT</text>
+    <use href="#wordmark-y" x="344" y="0" width="76" height="104"/>
+    <text x="428" y="84" fill="#eaf7f8" font-size="92" font-weight="500" letter-spacing="9">ON</text>
+    <text x="5" y="148" fill="#a8bbc1" font-size="34" font-weight="500" letter-spacing="16">LABS</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cyan-stroke" x1="250" y1="130" x2="774" y2="894" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#78f4ff"/>
+      <stop offset="0.52" stop-color="#31d4df"/>
+      <stop offset="1" stop-color="#16808c"/>
+    </linearGradient>
+    <filter id="quiet-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.88 0 0 0 0 0.95 0 0 0 0.42 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="#0b1116"/>
+  <g filter="url(#quiet-glow)">
+    <path d="M512 112 L824 292 V652 L512 832 L200 652 V292 Z" fill="none" stroke="url(#cyan-stroke)" stroke-width="34" stroke-linejoin="round"/>
+    <path d="M512 230 L398 314 H488 V420 L372 504 H478 V682 L568 730 V542 L680 460 H574 V354 L720 270 H626 Z"
+      fill="none" stroke="#35d7e4" stroke-width="52" stroke-linejoin="miter" stroke-linecap="square"/>
+    <path d="M512 230 L398 314 H488 V420 L372 504 H478 V682 L568 730 V542 L680 460 H574 V354 L720 270 H626 Z"
+      fill="#35d7e4" opacity="0.16"/>
+    <rect x="476" y="174" width="72" height="72" rx="12" fill="#78f4ff"/>
+  </g>
+</svg>
