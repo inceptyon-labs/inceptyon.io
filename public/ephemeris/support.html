@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Ephemeris by Inceptyon Labs</title>
+    <meta name="description" content="Support for Ephemeris, the nightly puzzle observatory. Answers to common questions and how to reach us.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://inceptyon.io/ephemeris/support.html" />
+    <style>
+        :root {
+            --night: #0A1118;
+            --night-raised: #101a24;
+            --hairline: #4A3D2C;
+            --brass: #8B7353;
+            --brass-bright: #AB926C;
+            --ink-text: #c9c2b6;
+            --ink-muted: #8a8478;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "New York", ui-serif, Georgia, serif;
+            background: var(--night);
+            color: var(--ink-text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 640px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+        header { text-align: center; padding-bottom: 2.5rem; }
+        .kicker {
+            font-family: -apple-system, "SF Pro Text", sans-serif;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--brass);
+        }
+        h1 { font-size: 2rem; font-weight: 700; color: var(--brass-bright); margin-top: 0.75rem; }
+        .rule {
+            border: none; height: 1px; background: var(--hairline);
+            margin: 2.5rem auto; width: 100%; position: relative; overflow: visible;
+        }
+        .rule::after {
+            content: '✦'; position: absolute; top: -0.72em; left: 50%;
+            transform: translateX(-50%); background: var(--night);
+            padding: 0 0.75em; color: var(--brass); font-size: 0.85rem;
+        }
+        h2 { font-size: 1.25rem; font-weight: 600; color: var(--brass-bright); margin: 2.25rem 0 0.75rem; }
+        p + p { margin-top: 1rem; }
+        strong { color: var(--brass-bright); font-weight: 600; }
+        a { color: var(--brass-bright); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--hairline); }
+        .plate {
+            background: var(--night-raised); border: 1px solid var(--hairline);
+            border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+        }
+        footer { margin-top: 4rem; text-align: center; font-size: 0.85rem; color: var(--ink-muted); }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="kicker">Ephemeris</div>
+            <h1>Support</h1>
+        </header>
+
+        <div class="plate">
+            <p>The fastest way to reach us is email: <a href="mailto:support@inceptyon.io">support@inceptyon.io</a>. A real person reads it, usually within a day or two.</p>
+        </div>
+
+        <h2>When do new puzzles arrive?</h2>
+        <p>At your local midnight. Everyone gets the same six puzzles for their calendar date, so results are comparable across time zones.</p>
+
+        <h2>I missed a night. Is my streak gone?</h2>
+        <p>You earn one cloud-cover token each week; it quietly covers a missed night. Two missed nights in a week will break a streak — the sky is forgiving, not indifferent.</p>
+
+        <h2>Why does Ephemeris ask for my location?</h2>
+        <p>Once each evening, to choose tonight's constellation from the sky actually above you. The lookup runs on your device and your location never leaves it. Decline it and the app picks a constellation without your sky; nothing else changes. Details in the <a href="privacy.html">privacy policy</a>.</p>
+
+        <h2>Do I need an account or a connection?</h2>
+        <p>No accounts, ever. Puzzles are generated on your device and the app plays fully offline.</p>
+
+        <h2>Is Ephemeris really free?</h2>
+        <p>Yes — every daily puzzle, free forever, no ads. A one-time Pro unlock (archive, deeper stats, alternate icons) may come later; the nightly six will never move behind it.</p>
+
+        <h2>Accessibility</h2>
+        <p>Ephemeris supports full Dynamic Type through the largest accessibility sizes, VoiceOver on every screen, and colorblind-safe puzzle states. If something reads badly or a control is unreachable, that's a bug — please tell us.</p>
+
+        <h2>Found a problem with a puzzle?</h2>
+        <p>Include the date and the game's name in your email and we can pull the exact puzzle you saw.</p>
+
+        <hr class="rule">
+
+        <footer>
+            Inceptyon Labs LLC · Tampa, Florida<br>
+            <a href="https://inceptyon.io">inceptyon.io</a> · <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
